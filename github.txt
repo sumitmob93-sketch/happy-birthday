@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Shivangi 🎂</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg,#ffd6e7,#ffeabf,#e0f7ff);
+  text-align:center;
+  overflow-x:hidden;
+}
+
+.container{
+  padding:60px 20px;
+}
+
+h1{
+  font-size:60px;
+  color:#ff4d8d;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+.characters{
+  font-size:85px;
+  margin:25px 0;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+.quote{
+  background:white;
+  margin:20px auto;
+  padding:22px;
+  max-width:680px;
+  border-radius:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  font-size:20px;
+  transition:0.3s;
+}
+
+.quote:hover{
+  transform:scale(1.05);
+}
+
+button{
+  margin-top:35px;
+  padding:16px 35px;
+  font-size:19px;
+  border:none;
+  border-radius:40px;
+  background:#ff4d8d;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff2c74;
+  transform:scale(1.08);
+}
+
+.hidden{
+  display:none;
+  font-size:34px;
+  margin-top:40px;
+}
+
+.secret{
+  display:none;
+  margin-top:50px;
+  font-size:26px;
+  background:#fff0f6;
+  padding:25px;
+  border-radius:20px;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.footer{
+  margin-top:70px;
+  font-size:18px;
+  color:#555;
+}
+
+.confetti{
+  position:fixed;
+  width:10px;
+  height:10px;
+  top:-10px;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+  }
+}
+
+
+ 100%{transform:translateY(-120vh);opacity:0.9}
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1 ondblclick="showSecret()">🎉 Happy Birthday Shivangi 🎉</h1>
+
+<div class="characters" style="display:flex;justify-content:center;gap:25px;align-items:center;flex-wrap:wrap;">
+<img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" width="110" style="border-radius:15px">
+</div>
+
+<div class="quote">"Shivangi, the world became brighter the day I met you." ✨</div>
+
+<div class="quote">"Some people make life beautiful just by being in it… you are one of those people." 💕</div>
+
+<div class="quote">"Your smile can light up even the darkest days." 😊</div>
+
+<div class="quote">"You are not just special, you are unforgettable." 🌸</div>
+
+<div class="quote">"People like you are rare — kind, lovely and full of positive energy." 💫</div>
+
+<div class="quote">"The best friendships are built with care, laughter and a little bit of love." ❤️</div>
+
+<div class="quote">"If happiness had a face, it would probably look like your smile." 🌷</div>
+
+<div class="quote">"May your life always be filled with love, success and endless smiles." 🎈</div>
+
+<button onclick="showSurprise()">Click for Special Surprise 🎁</button>
+
+<div id="surprise" class="hidden">
+🎉 Shivangi you are truly amazing! 🎉 <br><br>
+May your birthday be filled with love, laughter, cake and beautiful memories. 🎂💖 <br><br>
+Never forget how special you are.<br><br>
+
+<img src="https://media1.tenor.com/m/qcLd8VXvY-AAAAAC/happy-cat-cat.gif" width="200" style="border-radius:20px">
+
+</div>
+
+<div id="secret" class="secret">
+💌 Secret Message <br><br>
+Shivangi… you are one of those rare people who make life brighter just by being around. 
+Your kindness, your smile and your energy make the world a happier place. 
+
+Never change the amazing person you are. 🌸
+
+And always remember — someone out there is really grateful to have you in their life. 💖
+</div>
+
+
+</div>
+
+<script>
+
+function showSurprise(){
+ document.getElementById('surprise').style.display='block';
+ fullConfetti();
+}
+
+function showSecret(){
+ document.getElementById('secret').style.display='block';
+}
+
+function fullConfetti(){
+ for(let i=0;i<250;i++){
+   let conf=document.createElement('div');
+   conf.className='confetti';
+   conf.style.left=Math.random()*100+'vw';
+   conf.style.background='hsl('+Math.random()*360+'deg,100%,60%)';
+   conf.style.animationDuration=(Math.random()*3+2)+'s';
+   conf.style.width=(Math.random()*8+6)+'px';
+   conf.style.height=conf.style.width;
+   document.body.appendChild(conf);
+
+   setTimeout(()=>{conf.remove();},5000);
+ }
+}
+
+</script>
+
+</body>
+</html>
